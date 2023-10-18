@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  table-layout: fixed;
+  width: 100%;
+}
+
+td {
+  width: 20%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+button {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 1rem;
+  width: 5rem;
+}
