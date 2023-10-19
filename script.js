@@ -1,4 +1,4 @@
-  window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", () => {     //Basically changes the element inside the cell if it is clicked and only allows 1-5 values
     let cells = document.querySelectorAll("td");
 
     cells.forEach((cell) => {
@@ -21,60 +21,35 @@
     });
   });
 
-  function containsNumber(array, number) {
+  function containsNumber(array, number) {                //This function allows checking of both row and column
     return array.includes(parseInt(number));
-  }
-
-  function isValidSudoku(board) {
-    for (let i = 0; i < board.length; i++) {
-      const rowSet = new Set();
-      const colSet = new Set();
-
-      for (let j = 0; j < board[i].length; j++) {
-        const rowValue = board[i][j];
-        const colValue = board[j][i];
-
-        if (rowValue === "" || colValue === "") {
-          return false; // Empty cells are not valid
-        }
-
-        if (rowSet.has(rowValue) || colSet.has(colValue)) {
-          return false; // Duplicate value found in row or column
-        }
-
-        rowSet.add(rowValue);
-        colSet.add(colValue);
-      }
-    }
-
-    return true;
   }
 
   function solveSudoku(board) {
     for (let i = 0; i < board.length; i++) {
       for (let j = 0; j < board[i].length; j++) {
-        if (board[i][j] === "") {
+        if (board[i][j] === "") {                         //Check if the current cell is empty. Empty == needs value
           for (let num = 1; num <= 5; num++) {
             if (
-              !containsNumber(board[i], num) &&
-              !containsNumber(board.map(r => r[j]), num)
+              !containsNumber(board[i], num) &&           //Check if num is not in the row of the empty
+              !containsNumber(board.map(r => r[j]), num)  //Check if num is not in the column of the empty
             ) {
               board[i][j] = num;
-              if (solveSudoku(board)) {
-                return board;
+              if (solveSudoku(board)) {                   //It uses recursion to solve the remaining empty cells
+                return board;                             //Backtrack by resetting the cell to an empty state only if the recursive call returns null
               }
               board[i][j] = "";
             }
           }
-          return null;
+          return null;                                    //returns null if the cell already has a value inside
         }
       }
     }
-    return board;
+    return board;                                         //returns the board
   }
 
 
-  document.getElementById("solve-button").addEventListener("click", () => {
+  document.getElementById("solve-button").addEventListener("click", () => { //basically calls the function when the button is clicked
     let cells = document.querySelectorAll("td");
     let board = [...Array(5)].map(() => Array(5).fill(""));
   
