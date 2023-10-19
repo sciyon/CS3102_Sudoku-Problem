@@ -2,16 +2,16 @@ table {
   border-collapse: collapse;
   margin-bottom: 2rem;
   table-layout: fixed;
-  width: 100%;
 }
 
 td {
-  width: 20%;
-  height: 30px;
-  padding: 10px;
-  border: 1px solid black;
-  box-sizing: border-box;
-  text-align: center;
+  width: 10px; /* Set the width you desire */
+  height: fit-content; /* Set the height you desire */
+  border: 1px solid black; /* Optional: Add borders for visual separation */
+  text-align: center; /* Optional: Center text within the cells */
+  vertical-align: middle; /* Optional: Vertically center text */
+  font-size: 50px;
+  font-weight: 700;
 }
 
 .container {
@@ -25,5 +25,11 @@ button {
   text-align: center;
   margin: 0 auto;
   padding-top: 1rem;
-  width: 5rem;
+  margin-bottom: 1rem;
+  width: 15rem;
+  color: white;
+  background-color: red;
+  font-size: 50px;
+  border-radius: 50px;
+
 }
