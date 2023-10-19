@@ -5,8 +5,8 @@ table {
 }
 
 td {
-  width: 10px; /* Set the width you desire */
-  height: fit-content; /* Set the height you desire */
+  width: 60px; /* Set the width you desire */
+  height: 60px; /* Set the height you desire */
   border: 1px solid black; /* Optional: Add borders for visual separation */
   text-align: center; /* Optional: Center text within the cells */
   vertical-align: middle; /* Optional: Vertically center text */
